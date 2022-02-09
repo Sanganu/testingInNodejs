@@ -1,12 +1,22 @@
-// class Node{
-   
-//     constructor(data,left=null,right=null){
-//         this.data = data;
-//         this.left = null;
-//         this.right = null;
-//     }
-// }
+const inquirer = require("inquirer");
+const Manager = require("./library/Manager");
+const Intern = require("./library/Intern");
+const Engineer = require("./library/Engineer");
 
-// class BST{
-    
-// }
+const employeeQuestions = [
+    {
+
+    },
+    {
+
+    }
+]
+
+
+const getMenu = () => {
+    inquirer.prompt([
+        {
+            type:
+        }
+    ])
+}
