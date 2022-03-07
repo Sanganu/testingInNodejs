@@ -46,3 +46,7 @@ const getMenu = () => {
          }
     })
 }
+
+function newManager(){
+
+}

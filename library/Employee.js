@@ -1,20 +1,20 @@
 class Employee{
-    constructor(name,id,email){
+    constructor(name,email){
         this.name =name;
-        this.id = id;
+        this.id = this.id++ || 1;
         this.email = email;
     }
     getName(){
-        return this.name
+        return `${this.name}`
     }
     getId(){
         return this.id
     }
     getEmail(){
-        return this.email;
+        return `<a href="mailto:${this.email}">${this.email}</a>`
     }
     getRole(){
-        return "Manager"
+        return "Employee"
     }
 }
 
