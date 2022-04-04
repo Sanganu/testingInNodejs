@@ -6,47 +6,89 @@ const Engineer = require("./library/Engineer");
 const employeeQuestions = [
 
     {
-      type:"input",
-      name:"employeename",
-      message:"Enter Employee Name"
+        type: "input",
+        name: "employeename",
+        message: "Enter Employee Name"
     },
     {
-        type:"input",
-        name:"employeeemail",
-        message:"Enter Employee Email"
+        type: "input",
+        name: "employeeemail",
+        message: "Enter Employee Email"
+    },
+    {
+        type: "list",
+        name: "roleselection",
+        choices: [{ name: "Manager", value: 1 },
+        { name: "Engineer", value: 2 },
+        { name: "Intern", value: 3 }],
+        message: "Select New Employee Category to add"
+    },
+    {
+        type: "input",
+        name: "zoomlink",
+        message: "Enter Zoom Link ?",
+        when: (userResponse) => (userResponse.roleselection) === 1)
+    },
+    {
+        type: "input",
+        message: "Enter School Name",
+        name: "school",
+        when: (userResponse) => (userResponse.roleselection === 3)
+    },
+    {
+        type: "input",
+        message: "Enter Github Username ?",
+        name: "github",
+        when: (userResponse) => (userResponse.roleselection === 2)
     }
 ]
 
 
+const getNewEmployeeDetails = () => {
+    inquirer.prompt(employeeQuestions)
+        .then(userResponse => {
+            switch (userselection.roleselection) {
+                case "1":
+                    newManager(userResponse);
+                    break;
+                case "2":
+                    newEngineer(userResponse);
+                    break;
+                case "3":
+                    newIntern(userResponse);
+                    break;
+                default:
+                    getTeamHTML();
+                    break;
+            }
+        });
+
+
+}
+
 const getMenu = () => {
+    console.log("Welcome to New Hire System")
     inquirer.prompt([
         {
-            type:"list",
-            name:"userselection",
-            choices:[{name:"Add New Manager",value:1},
-            {name:"Add Engineer",value:2},
-            {name:"Add Inter",value:3},
-            {name:"Exit",value:4}],
-            message:"Select New Employee Category to add"
+            type: "list",
+            name: "optionelection",
+            choices: [{ name: "Add New Employee", value: 1 },
+            { name: "Exit App", value: 2 }],
+            message: "Select New Employee Category to add"
         }
-    ]).then(({userselection}) =>{
-        switch(userselection){
+
+    ]).then(({ optionselection }) => {
+        switch (optionselection) {
             case "1":
-               newManager();
-               break;
-            case "2":
-                newEngineer();
-                break;
-            case "3":
-                newIntern();
+                getNewEmployeeDetails()
                 break;
             default:
-               getTeamHTML();
-            break;     
-         }
+                getTeamHTML();
+                break;
+        }
     })
 }
 
-function newManager(){
+function newManager({employeename,employeeemail,zoomlink}){
 
-}
+ }

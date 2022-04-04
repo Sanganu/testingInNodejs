@@ -1,7 +1,8 @@
+const EmployeeDB = require("./EmployeeDB");
 class Employee{
     constructor(name,email){
+        super()
         this.name =name;
-        this.id = this.id++ || 1;
         this.email = email;
     }
     getName(){
