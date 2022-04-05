@@ -12,7 +12,7 @@ test('Testing the Employee Class',() => {
     expect(newHire.getName()).toEqual(nameTestData)
     expect(newHire.email).toEqual(emailTestData)
     expect(newHire.getRole()).toEqual("Engineer")
-    expect(newHire.getGithub()).toEqual(`<a href="https://github.com/${this.githubTestData}">GithubProfile</a>`)
+    expect(newHire.getGithub()).toEqual(`<a href="https://github.com/${githubTestData}">GithubProfile</a>`)
     expect(isNaN(newHire.getId())).toBe(false)
 });
 
