@@ -71,7 +71,7 @@ const getMenu = () => {
     inquirer.prompt([
         {
             type: "list",
-            name: "optionelection",
+            name: "optionselection",
             choices: [{ name: "Add New Employee", value: 1 },
             { name: "Exit App", value: 2 }],
             message: "Select New Employee Category to add"

@@ -1,7 +1,7 @@
 const Employee = require("./Employee");
 class Manager extends Employee{
-    constructor(name,id,email,zoomlink){
-        super(name,id,email)
+    constructor(name,email,zoomlink){
+        super(name,email)
         this.zoomlink = zoomlink;
     }
     getZoomLink(){
