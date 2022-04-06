@@ -3,7 +3,7 @@
 class Employee {
     static id = 0;
     constructor(name, email) {
-        Employee.id = Employee.id++;
+        Employee.id = Employee.id+1;
         this.name = name;
         this.email = email;
         this.id = Employee.id
@@ -17,7 +17,7 @@ class Employee {
     getEmail() {
         return `<a href="mailto:${this.email}">${this.email}</a>`
     }
-    getRole() {
+    getRole() { 
         return "Employee"
     }
 }

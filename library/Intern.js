@@ -10,6 +10,9 @@ class Intern extends Employee{
     getRole(){
         return "Intern"
     }
+    getId(){
+        return `Intern #${this.id}`
+    }
 }
 
 module.exports = Intern;

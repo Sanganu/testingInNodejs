@@ -5,7 +5,7 @@ test('Testing the Employee Class',() => {
     const emailTestData = "tech@faang.com"
     const githubTestData = "codejs"
     const newHire = new Engineer(nameTestData,emailTestData,githubTestData)
-    //console.log(newHire)
+    console.log(newHire)
     expect(typeof(newHire)).toBe("object")
     expect(newHire.name).toEqual(nameTestData)
     expect(newHire.getEmail()).toEqual(`<a href="mailto:${emailTestData}">${emailTestData}</a>`)

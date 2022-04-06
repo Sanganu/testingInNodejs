@@ -5,7 +5,7 @@ test('Testing the Employee Class',() => {
     const emailTestData = "tech@faang.com"
     const zoomTestData = "https://zoom.us/j/99564707973?pwd=VkhkNFh1RWNXN2x0cXh5elB4bkc4QT09"
     const newHire = new Manager(nameTestData,emailTestData,zoomTestData)
-    // console.log(newHire)
+    console.log(newHire)
     expect(typeof(newHire)).toBe("object")
     expect(newHire.name).toEqual(nameTestData)
     expect(newHire.getEmail()).toEqual(`<a href="mailto:${emailTestData}">${emailTestData}</a>`)

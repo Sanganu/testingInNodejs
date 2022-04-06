@@ -10,6 +10,9 @@ class Engineer extends Employee{
     getRole(){
         return "Engineer"
     }
+    getId(){
+        return `Engineer #${this.id}`
+    }
     
 }
 

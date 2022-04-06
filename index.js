@@ -27,7 +27,7 @@ const employeeQuestions = [
         type: "input",
         name: "zoomlink",
         message: "Enter Zoom Link ?",
-        when: (userResponse) => (userResponse.roleselection) === 1)
+        when: (userResponse) => (userResponse.roleselection === 1)
     },
     {
         type: "input",
@@ -47,14 +47,14 @@ const employeeQuestions = [
 const getNewEmployeeDetails = () => {
     inquirer.prompt(employeeQuestions)
         .then(userResponse => {
-            switch (userselection.roleselection) {
-                case "1":
+            switch (userResponse.roleselection) {
+                case 1:
                     newManager(userResponse);
                     break;
-                case "2":
+                case 2:
                     newEngineer(userResponse);
                     break;
-                case "3":
+                case 3:
                     newIntern(userResponse);
                     break;
                 default:
@@ -79,7 +79,7 @@ const getMenu = () => {
 
     ]).then(({ optionselection }) => {
         switch (optionselection) {
-            case "1":
+            case 1:
                 getNewEmployeeDetails()
                 break;
             default:
@@ -90,5 +90,14 @@ const getMenu = () => {
 }
 
 function newManager({employeename,employeeemail,zoomlink}){
+     const newHire = new Manager(employeename,employeeemail,zoomlink);
+     const template = newHire.getManagerTemplate()
+     console.log("template" ,template)
 
  }
+
+ function getTeamHTML(){
+     console.log("HTML generate")
+     process.exit(0)
+ }
+ getMenu()
