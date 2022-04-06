@@ -111,13 +111,13 @@ function newManager({employeename,employeeemail,zoomlink}){
     
  }
  function newIntern({employeename,employeeemail,school}){
-    const newHire = new Manager(employeename,employeeemail,school);
+    const newHire = new Intern(employeename,employeeemail,school);
     managerTemplate += newHire.getManagerTemplate()
     console.log("template" ,managerTemplate)
    getMenu();
 }
 function newEngineer({employeename,employeeemail,github}){
-    const newHire = new Manager(employeename,employeeemail,github);
+    const newHire = new Engineer(employeename,employeeemail,github);
     managerTemplate += newHire.getManagerTemplate()
     console.log("template" ,managerTemplate)
    getMenu();
