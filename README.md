@@ -28,4 +28,4 @@ Senior Tutor, 2U
 ![OUTPUT HTML](/images/screenshot2.PNG)
 
 
-![Output HTML](/images/screenshot2.PNG)
+![Output HTML](/images/screenshot3.PNG)
