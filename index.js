@@ -2,6 +2,11 @@ const inquirer = require("inquirer");
 const Manager = require("./library/Manager");
 const Intern = require("./library/Intern");
 const Engineer = require("./library/Engineer");
+let managerTemplate =""
+let engineerTemplate=""
+let internTemplate = ""
+const HtmlTemplate = require("./library/HtmlTemplate");
+const fs= require("fs")
 
 const employeeQuestions = [
 
@@ -91,13 +96,30 @@ const getMenu = () => {
 
 function newManager({employeename,employeeemail,zoomlink}){
      const newHire = new Manager(employeename,employeeemail,zoomlink);
-     const template = newHire.getManagerTemplate()
-     console.log("template" ,template)
-
+     managerTemplate += newHire.getManagerTemplate()
+     console.log("template" ,managerTemplate)
+    getMenu();
  }
 
- function getTeamHTML(){
+ async function  getTeamHTML(){
      console.log("HTML generate")
-     process.exit(0)
+     let output = await HtmlTemplate(managerTemplate,engineerTemplate,internTemplate)
+     fs.writeFile("./Output/index.html",output,(err) => {
+         err ? console.error(err) : console.log("File Generated")
+         process.exit(0)
+     })
+    
  }
+ function newIntern({employeename,employeeemail,school}){
+    const newHire = new Manager(employeename,employeeemail,school);
+    managerTemplate += newHire.getManagerTemplate()
+    console.log("template" ,managerTemplate)
+   getMenu();
+}
+function newEngineer({employeename,employeeemail,github}){
+    const newHire = new Manager(employeename,employeeemail,github);
+    managerTemplate += newHire.getManagerTemplate()
+    console.log("template" ,managerTemplate)
+   getMenu();
+}
  getMenu()
