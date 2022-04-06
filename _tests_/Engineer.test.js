@@ -13,6 +13,6 @@ test('Testing the Employee Class',() => {
     expect(newHire.email).toEqual(emailTestData)
     expect(newHire.getRole()).toEqual("Engineer")
     expect(newHire.getGithub()).toEqual(`<a href="https://github.com/${githubTestData}">GithubProfile</a>`)
-    expect(isNaN(newHire.getId())).toBe(false)
+    expect(isNaN(newHire.getId().split("#")[1])).toBe(false)
 });
 

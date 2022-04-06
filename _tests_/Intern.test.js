@@ -13,6 +13,6 @@ test('Testing the Employee Class',() => {
     expect(newHire.email).toEqual(emailTestData)
     expect(newHire.getRole()).toEqual("Intern")
     expect(newHire.getSchool()).toEqual(`${schoolTestData}`)
-    expect(isNaN(newHire.getId())).toBe(false)
+    expect(isNaN(newHire.getId().split("#")[1])).toBe(false)
 });
 
