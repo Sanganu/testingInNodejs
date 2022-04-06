@@ -97,8 +97,7 @@ const getMenu = () => {
 function newManager({employeename,employeeemail,zoomlink}){
      const newHire = new Manager(employeename,employeeemail,zoomlink);
      managerTemplate += newHire.getManagerTemplate()
-     console.log("template" ,managerTemplate)
-    getMenu();
+     getMenu();
  }
 
  async function  getTeamHTML(){
@@ -112,14 +111,12 @@ function newManager({employeename,employeeemail,zoomlink}){
  }
  function newIntern({employeename,employeeemail,school}){
     const newHire = new Intern(employeename,employeeemail,school);
-    managerTemplate += newHire.getManagerTemplate()
-    console.log("template" ,managerTemplate)
-   getMenu();
+    internTemplate += newHire.getInternTemplate()
+    getMenu();
 }
 function newEngineer({employeename,employeeemail,github}){
     const newHire = new Engineer(employeename,employeeemail,github);
-    managerTemplate += newHire.getManagerTemplate()
-    console.log("template" ,managerTemplate)
-   getMenu();
+   engineerTemplate += newHire.getEngineerTemplate()
+    getMenu();
 }
  getMenu()

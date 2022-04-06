@@ -11,18 +11,27 @@ const HtmlTemplate =(managerTemplate,engineerTemplate,internTemplate)=>{
 
     </head>
     <body>
-    <header>
-    <h1 class="text-5xl font-bold mt-0 mb-6">Team Profile</h1>
+    <header class="bg-orange-400">
+    <h1 class="text-3xl font-bold underline m-6 p-6">Team Profile Generator App</h1>
     </header>
-    <section class="overflow-hidden text-gray-700">
+    <section class="overflow-hidden text-gray-700 flex">
     ${managerTemplate}
     </section>
-    <section class="overflow-hidden text-gray-700">
+    <section class="overflow-hidden text-gray-700 flex">
     ${engineerTemplate}
-    </section>
-    <section class="overflow-hidden text-gray-700">
+    </section class="mb-10">
+    <section class="overflow-hidden text-gray-700 flex">
     ${internTemplate}
     </section>
+    <footer class="text-center text-white bg-orange-400 mt-6">
+    <div class="container p-6">
+    <div class="grid lg:grid-cols-6 md:grid-cols-3 gap-4">
+      <div class="lg:mb-0 mb-6">
+      <h6>&copy; Sangeetha.K</h6>
+      </div>
+     </div>
+    </div>
+    </footer>
     <script>
     import 'tw-elements';
     </script>
